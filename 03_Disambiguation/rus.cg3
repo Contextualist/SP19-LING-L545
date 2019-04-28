@@ -1,0 +1,14 @@
+DELIMITERS = "." ;
+
+LIST DET = DET ;
+LIST PUNCT = PUNCT ;
+LIST Nom = Case=Nom ;
+LIST ADP = ADP ;
+LIST Gen = Case=Gen ;
+LIST N = NOUN PROPN PRON ;
+
+SECTION
+
+REMOVE DET IF (1C PUNCT) ;
+REMOVE Nom IF (-1 ADP) ;
+REMOVE Gen IF (NOT 1 Gen) (1C N) ;
